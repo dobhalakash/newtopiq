@@ -550,14 +550,15 @@
     </div>
   </footer>
   <!-- ===== SOCIAL FLOAT SLIDER ===== -->
-<div class="social-float">
-  @for (s of socialLinks; track s.platform) {
+<div class="social-float" role="complementary" aria-label="Social media links">
+  @for (s of SocialLink; track s.platform) {
     <a [href]="s.url"
        target="_blank"
+       rel="noopener noreferrer"
        [class]="'social-float-item social-' + s.platform"
-       [attr.aria-label]="s.platform">
-      <span class="social-float-label">{{ s.label }}</span>
-      <span class="social-float-icon">{{ s.icon }}</span>
+       [attr.aria-label]="s.label">
+      <span class="social-float-label" aria-hidden="true">{{ s.label }}</span>
+      <span class="social-float-icon" aria-hidden="true">{{ s.icon }}</span>
     </a>
   }
 </div>

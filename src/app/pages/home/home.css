@@ -445,38 +445,47 @@
   gap: 6px;
 }
 
+/* ===== SOCIAL FLOAT — shared component ===== */
+.social-float {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 800;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
 .social-float-item {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 10px;
   text-decoration: none;
-  background: var(--accent);
   color: #fff;
   border-radius: 30px 0 0 30px;
   padding: 10px 12px 10px 16px;
-  transform: translateX(calc(100% - 46px));
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-              box-shadow 0.25s ease;
-  box-shadow: -2px 2px 10px rgba(0,0,0,0.18);
-  min-width: 160px;
-  overflow: hidden;
+  min-width: 155px;
+  transform: translateX(calc(100% - 44px));
+  transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.22s ease;
+  box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.18);
 }
 
 .social-float-item:hover {
   transform: translateX(0);
-  box-shadow: -4px 4px 18px rgba(0,0,0,0.28);
+  box-shadow: -4px 4px 18px rgba(0, 0, 0, 0.28);
 }
 
 .social-float-label {
   font-size: 13px;
   font-weight: 700;
   white-space: nowrap;
-  letter-spacing: 0.02em;
   opacity: 0;
-  transform: translateX(10px);
-  transition: opacity 0.25s ease 0.05s,
-              transform 0.25s ease 0.05s;
+  transform: translateX(8px);
+  transition: opacity 0.22s ease 0.04s,
+              transform 0.22s ease 0.04s;
 }
 
 .social-float-item:hover .social-float-label {
@@ -490,39 +499,48 @@
   line-height: 1;
 }
 
-@media (max-width: 768px) {
-  .social-float-item {
-    padding: 8px 10px 8px 12px;
-    min-width: 140px;
-    transform: translateX(calc(100% - 40px));
-  }
-  .social-float-icon {
-    font-size: 18px;
-  }
-}/* ===== SOCIAL FLOAT SLIDER — PROFESSIONAL COLORS ===== */
+/* Platform colours */
+.social-instagram { background: #C13584; }
+.social-telegram  { background: #1E88C7; }
+.social-whatsapp  { background: #1DA851; }
+.social-youtube   { background: #CC0000; }
 
-.social-float-item {
-  box-shadow: -3px 3px 12px rgba(0, 0, 0, 0.2);
-}
-
-.social-instagram {
-  background: #C13584;
-}
-
-.social-telegram {
-  background: #1E88C7;
-}
-
-.social-whatsapp {
-  background: #1DA851;
-}
-
-.social-youtube {
-  background: #CC0000;
-}
-
-/* Slightly darken on hover for polish */
 .social-instagram:hover { background: #a02d6e; }
 .social-telegram:hover  { background: #1873aa; }
 .social-whatsapp:hover  { background: #178a44; }
 .social-youtube:hover   { background: #aa0000; }
+
+/* ── Tablet (≤ 992px) ── */
+@media (max-width: 992px) {
+  .social-float-item {
+    transform: translateX(calc(100% - 40px));
+    padding: 8px 10px 8px 12px;
+    min-width: 140px;
+  }
+  .social-float-icon { font-size: 18px; }
+}
+
+/* ── Mobile (≤ 768px) ──
+   Move up from bottom so it clears the bottom-sheet navbar trigger */
+@media (max-width: 768px) {
+  .social-float {
+    top: auto;
+    bottom: 88px;
+    transform: none;
+  }
+
+  .social-float-item {
+    transform: translateX(calc(100% - 38px));
+    min-width: 130px;
+  }
+}
+
+/* ── Small mobile (≤ 480px) ── */
+@media (max-width: 480px) {
+  .social-float-item {
+    transform: translateX(calc(100% - 36px));
+    padding: 7px 9px 7px 11px;
+    min-width: 120px;
+  }
+  .social-float-icon { font-size: 16px; }
+}

@@ -53,12 +53,13 @@ export class Home {
     { label: 'Results',       value: 'result'      },
     { label: 'Admit Cards',   value: 'admit'       },
   ];
-socialLinks = [
-  { platform: 'instagram', icon: '📷', label: 'Instagram', url: 'https://instagram.com/topiq', color: '#E1306C' },
-  { platform: 'telegram',  icon: '✈️', label: 'Telegram',  url: 'https://t.me/topiq',          color: '#0088cc' },
-  { platform: 'whatsapp',  icon: '💬', label: 'WhatsApp',  url: 'https://wa.me/919876543210',   color: '#25D366' },
-  { platform: 'youtube',   icon: '▶️', label: 'YouTube',   url: 'https://youtube.com/@topiq',   color: '#FF0000' },
-];
+ SocialLink= [
+    { platform: 'instagram', icon: '📷', label: 'Instagram', url: 'https://instagram.com/topiq' },
+    { platform: 'telegram',  icon: '✈️', label: 'Telegram',  url: 'https://t.me/topiq'         },
+    { platform: 'whatsapp',  icon: '💬', label: 'WhatsApp',  url: 'https://wa.me/919876543210'  },
+    { platform: 'youtube',   icon: '▶️', label: 'YouTube',   url: 'https://youtube.com/@topiq'  },
+  ];
+
   allNews: NewsItem[] = [
     {
       category:   'exam',
