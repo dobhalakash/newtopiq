@@ -1,0 +1,8 @@
+.navbar.scrolled {
+  box-shadow: 0 4px 32px rgba(26,58,107,0.18);
+  border-bottom-color: transparent;
+}
+
+.navbar.scrolled .nav-logo-img {
+  transform: scale(0.92);
+}

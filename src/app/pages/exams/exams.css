@@ -1,0 +1,12 @@
+.store-logo {
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+}
+
+.app-badge-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+}
