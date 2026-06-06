@@ -1,29 +1,41 @@
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.jpeg" alt="TOPIQ Logo" class="nav-logo-img">
+      <div class="nav-logo-text"></div>
+    </a>
 
-
-  <nav class="navbar">
-    <div class="container">
-      <a href="index.html" class="nav-logo">
-        <img src="images/logo.jpeg" alt="TOPIQ Logo" class="nav-logo-img">
-        <div class="nav-logo-text">
-       
-        </div>
-      </a>
-      <ul class="nav-menu">
-      <li><a href="/" class="active">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/exams">Exam Categories</a></li>
-      <li><a href="/rewards">Rewards</a></li>
-     
-       <li><a href="/leaderboard">Leaderboard</a></li>
-       <li><a href="/contact">Contact</a></li>
-      </ul>
-      <div class="nav-cta">
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="/" class="active" (click)="closeMenu()">Home</a></li>
+      <li><a href="/about" (click)="closeMenu()">About</a></li>
+      <li><a href="/exams" (click)="closeMenu()">Exam Categories</a></li>
+      <li><a href="/rewards" (click)="closeMenu()">Rewards</a></li>
+      <li><a href="/leaderboard" (click)="closeMenu()">Leaderboard</a></li>
+      <li><a href="/contact" (click)="closeMenu()">Contact</a></li>
+      <!-- CTA buttons inside menu for mobile -->
+      <li class="nav-menu-cta">
         <a href="/franchise" class="btn btn-outline btn-sm">Franchise Inquiry</a>
-        <a href="#app-section" class="btn btn-primary btn-sm">Download App</a>
-      </div>
-      <button class="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
+        <a href="#app-section" class="btn btn-primary btn-sm" (click)="closeMenu()">Download App</a>
+      </li>
+    </ul>
 
+    <div class="nav-cta">
+      <a href="/franchise" class="btn btn-outline btn-sm">Franchise Inquiry</a>
+      <a href="#app-section" class="btn btn-primary btn-sm">Download App</a>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu"
+            [class.open]="menuOpen"
+            (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- Mobile overlay -->
+  <div class="nav-overlay" id="navOverlay"
+       [class.active]="menuOpen"
+       (click)="closeMenu()">
+  </div>
+</nav>
